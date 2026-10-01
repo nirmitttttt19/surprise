@@ -1,0 +1,739 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Bhashu 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pink: #f8c9d9;
+  --rose: #e98eaa;
+  --deep: #a74469;
+  --cream: #fff8f4;
+  --text: #704451;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #fff1f5;
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.script {
+  font-family: 'Great Vibes', cursive;
+  color: var(--deep);
+  font-weight: normal;
+}
+
+.btn {
+  background: linear-gradient(135deg, #ed9ab6, #d86d96);
+  border: 1px solid #ffffff80;
+  padding: 14px 28px;
+  border-radius: 40px;
+  color: white;
+  font-size: 14px;
+  box-shadow: 0 7px 22px #d7799b55;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 25px #d7799b66;
+}
+
+/* OPENING ENVELOPE */
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background:
+    radial-gradient(circle at 20% 20%, #ffe8ef, transparent 50%),
+    linear-gradient(145deg, #f9dce7, #f6c3d5, #fff0ed);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 1s, visibility 1s;
+}
+
+#intro.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.envelope {
+  max-width: 430px;
+  width: 100%;
+  padding: 45px 25px;
+  background: rgba(255,255,255,.65);
+  border: 1px solid white;
+  border-radius: 28px;
+  box-shadow: 0 15px 60px #c67b9630;
+  backdrop-filter: blur(12px);
+  animation: appear 1.2s ease;
+}
+
+.envelope .small {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #bd718c;
+}
+
+.envelope h1 {
+  font-size: clamp(45px, 10vw, 68px);
+  margin: 20px 0 8px;
+}
+
+.envelope p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 15px auto 28px;
+}
+
+/* GENERAL SECTIONS */
+section {
+  padding: 85px 20px;
+  position: relative;
+}
+
+.hero {
+  min-height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, #ffe0ea, transparent 65%),
+    linear-gradient(160deg, #fff6f2, #fce4ec, #fbd4e2);
+}
+
+.hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero .tag {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #bd7892;
+  font-size: 11px;
+}
+
+.hero h1 {
+  font-size: clamp(60px, 12vw, 115px);
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.hero p {
+  max-width: 530px;
+  margin: 0 auto;
+  line-height: 1.9;
+  font-size: 15px;
+  color: #805565;
+}
+
+.hero .scroll {
+  margin-top: 45px;
+  font-size: 12px;
+  color: #b16d86;
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: clamp(28px, 6vw, 43px);
+  color: #9e506e;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #98707c;
+  margin-bottom: 45px;
+}
+
+/* LOVE LETTER */
+.letter-section {
+  background: #fff9f6;
+}
+
+.letter {
+  max-width: 730px;
+  margin: auto;
+  background: #fff;
+  border: 1px solid #f8dce5;
+  border-radius: 22px;
+  padding: clamp(25px, 6vw, 55px);
+  box-shadow: 0 12px 40px #a9557110;
+  line-height: 2.05;
+  font-size: 15px;
+}
+
+.letter:before {
+  content: "♡";
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  color: #e49ab2;
+  margin-bottom: 20px;
+}
+
+.letter p {
+  margin-bottom: 20px;
+}
+
+.letter .sign {
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  color: #bb6786;
+  text-align: right;
+  margin-top: 25px;
+}
+
+/* PHOTO GALLERY */
+.gallery-section {
+  background: linear-gradient(160deg, #fce8ee, #fff6f3);
+}
+
+.gallery {
+  max-width: 950px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.photo {
+  background: white;
+  padding: 10px 10px 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px #a75d761a;
+  transform: rotate(var(--tilt));
+  transition: transform .35s, box-shadow .35s;
+}
+
+.photo:hover {
+  transform: rotate(0deg) translateY(-7px);
+  box-shadow: 0 15px 30px #a75d7633;
+}
+
+.photo img {
+  width: 100%;
+  height: 290px;
+  display: block;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #f9e0e9;
+}
+
+.photo p {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: 14px;
+  padding-top: 15px;
+  color: #a05b74;
+}
+
+/* REASONS */
+.reasons {
+  background: #fffaf8;
+}
+
+.reason-grid {
+  max-width: 950px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.reason {
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 22px;
+  background: #fff0f4;
+  border: 1px solid #f9d9e4;
+  transition: .3s;
+}
+
+.reason:hover {
+  transform: translateY(-5px);
+}
+
+.reason span {
+  font-size: 30px;
+}
+
+.reason h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #a45070;
+  margin: 15px 0 10px;
+}
+
+.reason p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #896b75;
+}
+
+/* CAKE */
+.cake-section {
+  text-align: center;
+  background: linear-gradient(150deg, #ffe8ef, #fff4f1);
+}
+
+.cake {
+  font-size: 110px;
+  margin: 25px auto 10px;
+  display: inline-block;
+  filter: drop-shadow(0 10px 12px #a44f7020);
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.cake-section p {
+  line-height: 1.8;
+  font-size: 14px;
+  margin: 15px auto 25px;
+}
+
+#cakeMessage {
+  display: none;
+  margin: 25px auto 0;
+  font-family: 'Great Vibes', cursive;
+  font-size: 35px;
+  color: #b24c78;
+  animation: appear 1s;
+}
+
+/* FINAL MESSAGE */
+.final-section {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, #fff4f7, transparent 70%),
+    #f6d3df;
+}
+
+.final-card {
+  max-width: 680px;
+  padding: 25px;
+}
+
+.final-card h2 {
+  font-size: clamp(48px, 10vw, 85px);
+  margin: 20px 0;
+}
+
+.final-card p {
+  font-size: 15px;
+  line-height: 2;
+}
+
+#finalMessage {
+  display: none;
+  margin-top: 25px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  color: #a74469;
+}
+
+/* FOOTER */
+footer {
+  background: #f1c5d5;
+  color: #92536c;
+  text-align: center;
+  padding: 25px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* FLOATING HEARTS */
+.heart {
+  position: fixed;
+  z-index: 10;
+  bottom: -30px;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  opacity: .7;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  section { padding: 65px 18px; }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .photo img { height: 210px; }
+  .reason-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .photo img { height: 170px; }
+  .reason-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING SURPRISE -->
+<div id="intro">
+  <div class="envelope">
+    <div class="small">A little surprise for you ♡</div>
+    <h1 class="script">For My Bhashu 💗</h1>
+    <p>
+      To the prettiest girl in my universe,<br>
+      I made a tiny corner of the internet<br>
+      just for you. 💗
+    </p>
+    <button class="btn" onclick="openSurprise()">
+      Open your surprise 💌
+    </button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">A special day for my favorite human</div>
+    <h1 class="script">Happy Birthday,<br>Bhashu! 💗</h1>
+    <p>
+      Today the universe celebrates the day
+      it gifted me someone who makes my world
+      a little softer, brighter, and infinitely more beautiful.
+    </p>
+    <div class="scroll">SCROLL DOWN FOR YOUR SURPRISE ↓</div>
+  </div>
+</section>
+
+<!-- LOVE LETTER -->
+<section class="letter-section" id="letter">
+  <h2 class="section-title">A letter from my heart 💌</h2>
+  <p class="section-subtitle">
+    A few words for the girl who has my whole heart.
+  </p>
+
+  <div class="letter">
+    <p>My babyyyy Bhashu, my prettiest girl, my whole heart,</p>
+
+    <p>
+      Happy birthday, my love. 💗 I wish I could put into
+      words just how much you mean to me, but somehow
+      every sentence feels too small for the amount of
+      love I have for you.
+    </p>
+
+    <p>
+      You have this magical way of making ordinary
+      moments feel extraordinary. A random conversation
+      with you becomes my favorite part of the day.
+      Your smile is my comfort, your voice is my
+      favorite sound, and your presence is my favorite
+      place to be.
+    </p>
+
+    <p>
+      I hope you always see yourself the way I see you:
+      beautiful in ways that go far beyond your looks,
+      precious beyond words, and deserving of every
+      beautiful thing this world has to offer.
+    </p>
+
+    <p>
+      I want to be there for your little victories,
+      your sleepy mornings, your random rants,
+      your happiest days and even your difficult ones.
+      I want us to collect a million tiny memories,
+      take ridiculous pictures, laugh at the silliest
+      things, and keep falling in love with each other
+      in new ways.
+    </p>
+
+    <p>
+      If I could make one birthday wish for you,
+      it would be that life always treats your heart
+      gently. May you achieve everything you dream
+      of, may your smile never fade, and may you
+      never doubt how deeply you are loved.
+    </p>
+
+    <p>
+      And selfishly, I wish for countless more
+      birthdays by your side. More hugs, more kisses,
+      more late-night conversations, more adventures,
+      and more of this beautiful little world
+      that we are building together.
+    </p>
+
+    <p>
+      You are my favorite notification, my favorite
+      distraction, my safest hug, and my favorite
+      person. I love you more than yesterday
+      and less than tomorrow. 🥹💕
+    </p>
+
+    <p>Happy birthday once again, meri Bhashu. 💋</p>
+
+    <div class="sign">Forever yours ♡</div>
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="gallery-section" id="memories">
+  <h2 class="section-title">Our little universe 📸</h2>
+  <p class="section-subtitle">
+    A collection of moments I wish I could frame forever.
+  </p>
+
+  <div class="gallery">
+    <div class="photo" style="--tilt:-2deg">
+      <img src="photos/photo1.jpeg" alt="Our favorite memory 1">
+      <p>My favorite view ♡</p>
+    </div>
+
+    <div class="photo" style="--tilt:2deg">
+      <img src="photos/photo2.jpeg" alt="Our favorite memory 2">
+      <p>Us being us 💗</p>
+    </div>
+
+    <div class="photo" style="--tilt:-1deg">
+      <img src="photos/photo3.jpeg" alt="Our favorite memory 3">
+      <p>My pretty girl 🎀</p>
+    </div>
+
+    <div class="photo" style="--tilt:2deg">
+      <img src="photos/photo4.jpeg" alt="Our favorite memory 4">
+      <p>A moment to remember ✨</p>
+    </div>
+
+    <div class="photo" style="--tilt:-2deg">
+      <img src="photos/photo5.jpeg" alt="Our favorite memory 5">
+      <p>My happy place 🧸</p>
+    </div>
+
+    <div class="photo" style="--tilt:1deg">
+      <img src="photos/photo6.jpeg" alt="Our favorite memory 6">
+      <p>To a million more 💞</p>
+    </div>
+  </div>
+</section>
+
+<!-- REASONS I LOVE YOU -->
+<section class="reasons">
+  <h2 class="section-title">Reasons I adore you, Bhashu 🎀</h2>
+  <p class="section-subtitle">
+    And a million more that words can't explain.
+  </p>
+
+  <div class="reason-grid">
+    <div class="reason">
+      <span>🌷</span>
+      <h3>Your smile</h3>
+      <p>
+        Because one little smile from you can turn
+        my entire day around.
+      </p>
+    </div>
+
+    <div class="reason">
+      <span>🫶</span>
+      <h3>Your heart</h3>
+      <p>
+        The way you care, love and make people
+        feel special is beautiful.
+      </p>
+    </div>
+
+    <div class="reason">
+      <span>🌙</span>
+      <h3>Your presence</h3>
+      <p>
+        Even the most boring day feels like an
+        adventure when you're around.
+      </p>
+    </div>
+
+    <div class="reason">
+      <span>🧸</span>
+      <h3>Your little habits</h3>
+      <p>
+        All your cute, random, silly little things
+        that make you uniquely you.
+      </p>
+    </div>
+
+    <div class="reason">
+      <span>💌</span>
+      <h3>Your voice</h3>
+      <p>
+        My favorite sound, especially when you
+        say you love me.
+      </p>
+    </div>
+
+    <div class="reason">
+      <span>💗</span>
+      <h3>Simply you</h3>
+      <p>
+        No big reason needed. I would choose
+        you in every universe.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- BIRTHDAY CAKE -->
+<section class="cake-section">
+  <h2 class="section-title">Make a birthday wish, Bhashu 🎂</h2>
+  <p>
+    Close your eyes, make a wish and blow out your candles.
+    Here's a little birthday magic just for you. 💕
+  </p>
+
+  <div class="cake">🎂</div>
+  <br>
+
+  <button class="btn" onclick="blowCandles()">
+    Blow the candles ✨
+  </button>
+
+  <div id="cakeMessage">
+    May all your wishes come true, my Bhashu! 💖
+  </div>
+</section>
+
+<!-- FINAL SURPRISE -->
+<section class="final-section">
+  <div class="final-card">
+    <div style="font-size:35px">💗 ✨ 💗</div>
+
+    <h2 class="script">One last thing, Bhashu...</h2>
+
+    <p>
+      In a world full of people, somehow I found you.
+      And if life gave me a thousand chances to start
+      over, I would still look for you in every single
+      one of them.
+      <br><br>
+      You're my today, my tomorrow, and all the
+      beautiful little moments in between.
+      <br><br>
+      I love you endlessly, birthday girl. 💋
+    </p>
+
+    <br>
+
+    <button class="btn" onclick="showFinal()">
+      One more surprise? 💌
+    </button>
+
+    <p id="finalMessage">
+      I wish I could hug you right now. 🥹💗
+      <br>
+      I love you, Bhashu! 💋
+    </p>
+  </div>
+</section>
+
+<footer>
+  Made with all my love, just for Bhashu ♡
+  <br><br>
+  1000 kisses and infinite hugs 💋
+</footer>
+
+<script>
+function openSurprise() {
+  document.getElementById('intro').classList.add('hidden');
+  createHearts(22);
+}
+
+function createHearts(count) {
+  const emojis = ['💗','💕','💖','♡','🌸','✨'];
+
+  for (let i = 0; i < count; i++) {
+    const heart = document.createElement('div');
+
+    heart.className = 'heart';
+    heart.textContent =
+      emojis[Math.floor(Math.random() * emojis.length)];
+
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (14 + Math.random() * 22) + 'px';
+    heart.style.animationDuration = (5 + Math.random() * 6) + 's';
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 12000);
+  }
+}
+
+function blowCandles() {
+  document.getElementById('cakeMessage').style.display = 'block';
+  createHearts(35);
+}
+
+function showFinal() {
+  document.getElementById('finalMessage').style.display = 'block';
+  createHearts(40);
+}
+
+// Floating hearts
+setInterval(() => createHearts(2), 3500);
+</script>
+
+</body>
+</html>
