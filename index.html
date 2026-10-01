@@ -1,739 +1,543 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy Birthday Bhashu 💗</title>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --pink: #f8c9d9;
-  --rose: #e98eaa;
-  --deep: #a74469;
-  --cream: #fff8f4;
-  --text: #704451;
-}
-
-html {
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
-  background: #fff1f5;
-  color: var(--text);
-  overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff0f5, #ffe0ec, #fff5f8);
+    color: #713b54;
+    overflow-x: hidden;
+    text-align: center;
 }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
+h1, h2 {
+    font-family: 'Great Vibes', cursive;
+    color: #d63384;
 }
 
-.script {
-  font-family: 'Great Vibes', cursive;
-  color: var(--deep);
-  font-weight: normal;
+h1 {
+    font-size: clamp(3.5rem, 9vw, 6rem);
 }
 
-.btn {
-  background: linear-gradient(135deg, #ed9ab6, #d86d96);
-  border: 1px solid #ffffff80;
-  padding: 14px 28px;
-  border-radius: 40px;
-  color: white;
-  font-size: 14px;
-  box-shadow: 0 7px 22px #d7799b55;
-  transition: .3s;
+h2 {
+    font-size: clamp(2.8rem, 7vw, 4rem);
+    margin-bottom: 25px;
 }
 
-.btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 12px 25px #d7799b66;
+p {
+    line-height: 1.9;
 }
 
-/* OPENING ENVELOPE */
+/* Intro screen */
 #intro {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background:
-    radial-gradient(circle at 20% 20%, #ffe8ef, transparent 50%),
-    linear-gradient(145deg, #f9dce7, #f6c3d5, #fff0ed);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  transition: opacity 1s, visibility 1s;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: linear-gradient(135deg, #ffc6dc, #ffe8f0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    transition: opacity 1s ease;
 }
 
-#intro.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+#intro h1 {
+    margin-bottom: 20px;
 }
 
-.envelope {
-  max-width: 430px;
-  width: 100%;
-  padding: 45px 25px;
-  background: rgba(255,255,255,.65);
-  border: 1px solid white;
-  border-radius: 28px;
-  box-shadow: 0 15px 60px #c67b9630;
-  backdrop-filter: blur(12px);
-  animation: appear 1.2s ease;
+#intro p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
 }
 
-.envelope .small {
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  font-size: 11px;
-  color: #bd718c;
+/* Buttons */
+button {
+    background: #e75491;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 5px 18px #d6338440;
+    transition: 0.3s;
 }
 
-.envelope h1 {
-  font-size: clamp(45px, 10vw, 68px);
-  margin: 20px 0 8px;
+button:hover {
+    transform: scale(1.07);
+    background: #c72c72;
 }
 
-.envelope p {
-  font-size: 14px;
-  line-height: 1.8;
-  margin: 15px auto 28px;
-}
-
-/* GENERAL SECTIONS */
-section {
-  padding: 85px 20px;
-  position: relative;
-}
-
+/* Hero */
 .hero {
-  min-height: 95vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at 50% 0%, #ffe0ea, transparent 65%),
-    linear-gradient(160deg, #fff6f2, #fce4ec, #fbd4e2);
-}
-
-.hero-content {
-  max-width: 800px;
-  position: relative;
-  z-index: 2;
-}
-
-.hero .tag {
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #bd7892;
-  font-size: 11px;
-}
-
-.hero h1 {
-  font-size: clamp(60px, 12vw, 115px);
-  line-height: 1.2;
-  margin: 20px 0;
+    min-height: 100vh;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at top left, #fff 0, transparent 35%),
+        linear-gradient(135deg, #ffe1ed, #fff0f5);
 }
 
 .hero p {
-  max-width: 530px;
-  margin: 0 auto;
-  line-height: 1.9;
-  font-size: 15px;
-  color: #805565;
+    font-size: 1.1rem;
+    margin-top: 20px;
 }
 
-.hero .scroll {
-  margin-top: 45px;
-  font-size: 12px;
-  color: #b16d86;
-  letter-spacing: 2px;
+.big-heart {
+    color: #e75491;
+    font-size: 3rem;
+    margin-top: 25px;
+    animation: heartbeat 1.5s infinite;
 }
 
-.section-title {
-  font-family: 'Playfair Display', serif;
-  text-align: center;
-  font-size: clamp(28px, 6vw, 43px);
-  color: #9e506e;
-  margin-bottom: 18px;
-  font-weight: 500;
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.25); }
 }
 
-.section-subtitle {
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.8;
-  color: #98707c;
-  margin-bottom: 45px;
-}
-
-/* LOVE LETTER */
-.letter-section {
-  background: #fff9f6;
+/* Love letter */
+section {
+    padding: 80px 20px;
 }
 
 .letter {
-  max-width: 730px;
-  margin: auto;
-  background: #fff;
-  border: 1px solid #f8dce5;
-  border-radius: 22px;
-  padding: clamp(25px, 6vw, 55px);
-  box-shadow: 0 12px 40px #a9557110;
-  line-height: 2.05;
-  font-size: 15px;
-}
-
-.letter:before {
-  content: "♡";
-  display: block;
-  text-align: center;
-  font-size: 30px;
-  color: #e49ab2;
-  margin-bottom: 20px;
+    max-width: 850px;
+    margin: auto;
+    background: #ffffffd9;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px #c95d8b20;
+    text-align: left;
 }
 
 .letter p {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
+    font-size: 1rem;
 }
 
-.letter .sign {
-  font-family: 'Great Vibes', cursive;
-  font-size: 36px;
-  color: #bb6786;
-  text-align: right;
-  margin-top: 25px;
+/* Cute message cards */
+.cute-section {
+    background: #fff8fb;
 }
 
-/* PHOTO GALLERY */
-.gallery-section {
-  background: linear-gradient(160deg, #fce8ee, #fff6f3);
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    max-width: 1000px;
+    margin: 35px auto 0;
 }
 
-.gallery {
-  max-width: 950px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+.card {
+    background: white;
+    border-radius: 22px;
+    padding: 30px 20px;
+    box-shadow: 0 8px 25px #d633841c;
+    transition: transform 0.3s;
 }
 
-.photo {
-  background: white;
-  padding: 10px 10px 18px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px #a75d761a;
-  transform: rotate(var(--tilt));
-  transition: transform .35s, box-shadow .35s;
+.card:hover {
+    transform: translateY(-7px);
 }
 
-.photo:hover {
-  transform: rotate(0deg) translateY(-7px);
-  box-shadow: 0 15px 30px #a75d7633;
+.card span {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
 }
 
-.photo img {
-  width: 100%;
-  height: 290px;
-  display: block;
-  object-fit: cover;
-  border-radius: 6px;
-  background: #f9e0e9;
+.card h3 {
+    color: #d63384;
+    margin-bottom: 12px;
 }
 
-.photo p {
-  font-family: 'Playfair Display', serif;
-  text-align: center;
-  font-size: 14px;
-  padding-top: 15px;
-  color: #a05b74;
-}
-
-/* REASONS */
-.reasons {
-  background: #fffaf8;
-}
-
-.reason-grid {
-  max-width: 950px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.reason {
-  padding: 30px 20px;
-  text-align: center;
-  border-radius: 22px;
-  background: #fff0f4;
-  border: 1px solid #f9d9e4;
-  transition: .3s;
-}
-
-.reason:hover {
-  transform: translateY(-5px);
-}
-
-.reason span {
-  font-size: 30px;
-}
-
-.reason h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-  color: #a45070;
-  margin: 15px 0 10px;
-}
-
-.reason p {
-  font-size: 13px;
-  line-height: 1.8;
-  color: #896b75;
-}
-
-/* CAKE */
-.cake-section {
-  text-align: center;
-  background: linear-gradient(150deg, #ffe8ef, #fff4f1);
+/* Birthday wish */
+.birthday {
+    background: linear-gradient(135deg, #ffd5e5, #fff0f5);
 }
 
 .cake {
-  font-size: 110px;
-  margin: 25px auto 10px;
-  display: inline-block;
-  filter: drop-shadow(0 10px 12px #a44f7020);
-  animation: bounce 2s infinite ease-in-out;
+    font-size: 6rem;
+    margin: 25px 0;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
-.cake-section p {
-  line-height: 1.8;
-  font-size: 14px;
-  margin: 15px auto 25px;
+.cake:hover {
+    transform: scale(1.15) rotate(-5deg);
 }
 
 #cakeMessage {
-  display: none;
-  margin: 25px auto 0;
-  font-family: 'Great Vibes', cursive;
-  font-size: 35px;
-  color: #b24c78;
-  animation: appear 1s;
+    font-size: 1.2rem;
+    color: #d63384;
+    font-weight: 600;
+    margin-top: 20px;
 }
 
-/* FINAL MESSAGE */
-.final-section {
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background:
-    radial-gradient(ellipse at center, #fff4f7, transparent 70%),
-    #f6d3df;
-}
-
-.final-card {
-  max-width: 680px;
-  padding: 25px;
-}
-
-.final-card h2 {
-  font-size: clamp(48px, 10vw, 85px);
-  margin: 20px 0;
-}
-
-.final-card p {
-  font-size: 15px;
-  line-height: 2;
+/* Final surprise */
+.final {
+    background: #fff8fb;
 }
 
 #finalMessage {
-  display: none;
-  margin-top: 25px;
-  font-family: 'Great Vibes', cursive;
-  font-size: 36px;
-  color: #a74469;
-}
-
-/* FOOTER */
-footer {
-  background: #f1c5d5;
-  color: #92536c;
-  text-align: center;
-  padding: 25px;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-/* FLOATING HEARTS */
-.heart {
-  position: fixed;
-  z-index: 10;
-  bottom: -30px;
-  pointer-events: none;
-  animation: floatUp linear forwards;
-  opacity: .7;
-}
-
-@keyframes floatUp {
-  to {
-    transform: translateY(-110vh) rotate(40deg);
-    opacity: 0;
-  }
-}
-
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+    display: none;
+    max-width: 750px;
+    margin: 35px auto 0;
+    padding: 35px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px #d6338420;
+    font-size: 1.1rem;
+    line-height: 2;
+    animation: appear 1s ease;
 }
 
 @keyframes appear {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* MOBILE */
-@media (max-width: 700px) {
-  section { padding: 65px 18px; }
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-  .photo img { height: 210px; }
-  .reason-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+/* Footer */
+footer {
+    padding: 30px 15px;
+    background: #fbd5e5;
+    color: #8c4565;
 }
 
-@media (max-width: 420px) {
-  .photo img { height: 170px; }
-  .reason-grid { grid-template-columns: 1fr; }
+/* Floating hearts */
+.floating-heart {
+    position: fixed;
+    bottom: -40px;
+    color: #e75491;
+    pointer-events: none;
+    z-index: 50;
+    animation: floatUp 7s linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .letter {
+        padding: 25px;
+    }
+
+    section {
+        padding: 60px 18px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- OPENING SURPRISE -->
+<!-- Opening surprise -->
 <div id="intro">
-  <div class="envelope">
-    <div class="small">A little surprise for you ♡</div>
-    <h1 class="script">For My Bhashu 💗</h1>
-    <p>
-      To the prettiest girl in my universe,<br>
-      I made a tiny corner of the internet<br>
-      just for you. 💗
-    </p>
-    <button class="btn" onclick="openSurprise()">
-      Open your surprise 💌
-    </button>
-  </div>
+    <h1>For My Bhashu 💗</h1>
+    <p>A little surprise made with all my love. 🎀</p>
+    <button onclick="openWebsite()">Open Your Surprise 💌</button>
 </div>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div class="tag">A special day for my favorite human</div>
-    <h1 class="script">Happy Birthday,<br>Bhashu! 💗</h1>
+<!-- Birthday greeting -->
+<section class="hero">
+    <h1>Happy Birthday, Bhashu! 🎂💗</h1>
+
     <p>
-      Today the universe celebrates the day
-      it gifted me someone who makes my world
-      a little softer, brighter, and infinitely more beautiful.
+        To the prettiest girl and the most special person in my world. 🌷
     </p>
-    <div class="scroll">SCROLL DOWN FOR YOUR SURPRISE ↓</div>
-  </div>
+
+    <div class="big-heart">♡</div>
 </section>
 
-<!-- LOVE LETTER -->
-<section class="letter-section" id="letter">
-  <h2 class="section-title">A letter from my heart 💌</h2>
-  <p class="section-subtitle">
-    A few words for the girl who has my whole heart.
-  </p>
+<!-- Romantic paragraph -->
+<section>
+    <h2>A Little Message For You 💌</h2>
 
-  <div class="letter">
-    <p>My babyyyy Bhashu, my prettiest girl, my whole heart,</p>
+    <div class="letter">
+        <p>My Bhashu, 💗</p>
 
-    <p>
-      Happy birthday, my love. 💗 I wish I could put into
-      words just how much you mean to me, but somehow
-      every sentence feels too small for the amount of
-      love I have for you.
-    </p>
+        <p>
+            Happiest birthday to the girl who makes my life so much more
+            beautiful just by being in it. Today is your day, and I wish
+            I could wrap all the happiness in the world into one little
+            gift and give it to you.
+        </p>
 
-    <p>
-      You have this magical way of making ordinary
-      moments feel extraordinary. A random conversation
-      with you becomes my favorite part of the day.
-      Your smile is my comfort, your voice is my
-      favorite sound, and your presence is my favorite
-      place to be.
-    </p>
+        <p>
+            I hope you know how incredibly special you are to me. Your
+            smile, your laugh, your voice, your cute little habits and
+            even the most random things about you make me fall for you
+            all over again. Sometimes I look at you and wonder how I got
+            so lucky to have someone like you in my life.
+        </p>
 
-    <p>
-      I hope you always see yourself the way I see you:
-      beautiful in ways that go far beyond your looks,
-      precious beyond words, and deserving of every
-      beautiful thing this world has to offer.
-    </p>
+        <p>
+            I want to be the person you can talk to about absolutely
+            anything, the person who listens to your random stories,
+            laughs at your silly jokes, comforts you when things get
+            difficult and celebrates every little achievement with you.
+            I want to make countless beautiful memories with you.
+        </p>
 
-    <p>
-      I want to be there for your little victories,
-      your sleepy mornings, your random rants,
-      your happiest days and even your difficult ones.
-      I want us to collect a million tiny memories,
-      take ridiculous pictures, laugh at the silliest
-      things, and keep falling in love with each other
-      in new ways.
-    </p>
+        <p>
+            I love the way you make ordinary days feel extraordinary.
+            Even the smallest conversations with you can turn into
+            moments I want to remember forever. You bring a kind of
+            warmth into my life that words can never fully explain.
+        </p>
 
-    <p>
-      If I could make one birthday wish for you,
-      it would be that life always treats your heart
-      gently. May you achieve everything you dream
-      of, may your smile never fade, and may you
-      never doubt how deeply you are loved.
-    </p>
+        <p>
+            On your birthday, I wish you endless smiles, peaceful days,
+            beautiful surprises, success in everything you do and all
+            the love your heart can hold. I hope every dream you have
+            slowly turns into reality.
+        </p>
 
-    <p>
-      And selfishly, I wish for countless more
-      birthdays by your side. More hugs, more kisses,
-      more late-night conversations, more adventures,
-      and more of this beautiful little world
-      that we are building together.
-    </p>
+        <p>
+            And selfishly, I hope I get to be beside you for many more
+            birthdays, holding your hand, making you laugh and reminding
+            you how loved you are.
+        </p>
 
-    <p>
-      You are my favorite notification, my favorite
-      distraction, my safest hug, and my favorite
-      person. I love you more than yesterday
-      and less than tomorrow. 🥹💕
-    </p>
+        <p>
+            No matter how many times I say it, it will never feel like
+            enough. I love you so, so much, my pretty girl. You are my
+            favourite person, my sweetest thought and my cutest
+            distraction. 💕
+        </p>
 
-    <p>Happy birthday once again, meri Bhashu. 💋</p>
+        <p>
+            Happiest birthday once again, meri jaan. I hope your day is
+            as lovely and adorable as you are. 🎀
+        </p>
 
-    <div class="sign">Forever yours ♡</div>
-  </div>
+        <p>
+            Forever yours, with all my love. 💗
+        </p>
+    </div>
 </section>
 
-<!-- PHOTO GALLERY -->
-<section class="gallery-section" id="memories">
-  <h2 class="section-title">Our little universe 📸</h2>
-  <p class="section-subtitle">
-    A collection of moments I wish I could frame forever.
-  </p>
+<!-- Cute reasons -->
+<section class="cute-section">
+    <h2>Why You're So Special To Me 🌸</h2>
 
-  <div class="gallery">
-    <div class="photo" style="--tilt:-2deg">
-      <img src="photos/photo1.jpeg" alt="Our favorite memory 1">
-      <p>My favorite view ♡</p>
-    </div>
+    <div class="cards">
 
-    <div class="photo" style="--tilt:2deg">
-      <img src="photos/photo2.jpeg" alt="Our favorite memory 2">
-      <p>Us being us 💗</p>
-    </div>
+        <div class="card">
+            <span>🥹</span>
+            <h3>Your Smile</h3>
+            <p>
+                Because one smile from you can make my entire day better.
+            </p>
+        </div>
 
-    <div class="photo" style="--tilt:-1deg">
-      <img src="photos/photo3.jpeg" alt="Our favorite memory 3">
-      <p>My pretty girl 🎀</p>
-    </div>
+        <div class="card">
+            <span>🎀</span>
+            <h3>Your Cuteness</h3>
+            <p>
+                Because even when you're doing absolutely nothing,
+                you're still the cutest person ever.
+            </p>
+        </div>
 
-    <div class="photo" style="--tilt:2deg">
-      <img src="photos/photo4.jpeg" alt="Our favorite memory 4">
-      <p>A moment to remember ✨</p>
-    </div>
+        <div class="card">
+            <span>💗</span>
+            <h3>Your Heart</h3>
+            <p>
+                Because the beautiful person you are matters more
+                to me than anything else.
+            </p>
+        </div>
 
-    <div class="photo" style="--tilt:-2deg">
-      <img src="photos/photo5.jpeg" alt="Our favorite memory 5">
-      <p>My happy place 🧸</p>
-    </div>
+        <div class="card">
+            <span>🧸</span>
+            <h3>Just You</h3>
+            <p>
+                Because I don't need a reason to love you.
+                Being you is already enough.
+            </p>
+        </div>
 
-    <div class="photo" style="--tilt:1deg">
-      <img src="photos/photo6.jpeg" alt="Our favorite memory 6">
-      <p>To a million more 💞</p>
     </div>
-  </div>
 </section>
 
-<!-- REASONS I LOVE YOU -->
-<section class="reasons">
-  <h2 class="section-title">Reasons I adore you, Bhashu 🎀</h2>
-  <p class="section-subtitle">
-    And a million more that words can't explain.
-  </p>
+<!-- Birthday cake -->
+<section class="birthday">
+    <h2>Make A Birthday Wish 🎂</h2>
 
-  <div class="reason-grid">
-    <div class="reason">
-      <span>🌷</span>
-      <h3>Your smile</h3>
-      <p>
-        Because one little smile from you can turn
-        my entire day around.
-      </p>
-    </div>
+    <p>Close your eyes, make a wish and tap the cake! 💫</p>
 
-    <div class="reason">
-      <span>🫶</span>
-      <h3>Your heart</h3>
-      <p>
-        The way you care, love and make people
-        feel special is beautiful.
-      </p>
-    </div>
+    <div class="cake" onclick="cakeSurprise()">🎂</div>
 
-    <div class="reason">
-      <span>🌙</span>
-      <h3>Your presence</h3>
-      <p>
-        Even the most boring day feels like an
-        adventure when you're around.
-      </p>
-    </div>
-
-    <div class="reason">
-      <span>🧸</span>
-      <h3>Your little habits</h3>
-      <p>
-        All your cute, random, silly little things
-        that make you uniquely you.
-      </p>
-    </div>
-
-    <div class="reason">
-      <span>💌</span>
-      <h3>Your voice</h3>
-      <p>
-        My favorite sound, especially when you
-        say you love me.
-      </p>
-    </div>
-
-    <div class="reason">
-      <span>💗</span>
-      <h3>Simply you</h3>
-      <p>
-        No big reason needed. I would choose
-        you in every universe.
-      </p>
-    </div>
-  </div>
+    <div id="cakeMessage"></div>
 </section>
 
-<!-- BIRTHDAY CAKE -->
-<section class="cake-section">
-  <h2 class="section-title">Make a birthday wish, Bhashu 🎂</h2>
-  <p>
-    Close your eyes, make a wish and blow out your candles.
-    Here's a little birthday magic just for you. 💕
-  </p>
-
-  <div class="cake">🎂</div>
-  <br>
-
-  <button class="btn" onclick="blowCandles()">
-    Blow the candles ✨
-  </button>
-
-  <div id="cakeMessage">
-    May all your wishes come true, my Bhashu! 💖
-  </div>
-</section>
-
-<!-- FINAL SURPRISE -->
-<section class="final-section">
-  <div class="final-card">
-    <div style="font-size:35px">💗 ✨ 💗</div>
-
-    <h2 class="script">One last thing, Bhashu...</h2>
+<!-- Final message -->
+<section class="final">
+    <h2>One Last Little Surprise 💝</h2>
 
     <p>
-      In a world full of people, somehow I found you.
-      And if life gave me a thousand chances to start
-      over, I would still look for you in every single
-      one of them.
-      <br><br>
-      You're my today, my tomorrow, and all the
-      beautiful little moments in between.
-      <br><br>
-      I love you endlessly, birthday girl. 💋
+        I saved one more little message just for you.
     </p>
 
     <br>
 
-    <button class="btn" onclick="showFinal()">
-      One more surprise? 💌
+    <button onclick="showFinalMessage()">
+        Tap To Open 💌
     </button>
 
-    <p id="finalMessage">
-      I wish I could hug you right now. 🥹💗
-      <br>
-      I love you, Bhashu! 💋
-    </p>
-  </div>
+    <div id="finalMessage">
+        <h2>My Favourite Girl 💗</h2>
+
+        If I could choose one person to have beside me through all
+        the beautiful and difficult moments of life, I would choose
+        you every single time.
+
+        <br><br>
+
+        I want more late-night conversations, more silly arguments,
+        more laughter, more hugs, more kisses and more memories
+        that we will look back on and smile about.
+
+        <br><br>
+
+        You deserve to feel loved not just today, but every single
+        day of the year. And I hope I can keep giving you a thousand
+        reasons to smile.
+
+        <br><br>
+
+        Happy birthday, my love. Here's to you, to us and to all
+        the beautiful moments waiting for us. 💗
+
+        <br><br>
+
+        I LOVE YOU, BHASHU! 💋🎀
+    </div>
 </section>
 
 <footer>
-  Made with all my love, just for Bhashu ♡
-  <br><br>
-  1000 kisses and infinite hugs 💋
+    Made with endless love for Bhashu 💗
+    <br><br>
+    Your favourite person loves you the most. 🌷
 </footer>
 
 <script>
-function openSurprise() {
-  document.getElementById('intro').classList.add('hidden');
-  createHearts(22);
+/* Open birthday surprise */
+function openWebsite() {
+    const intro = document.getElementById("intro");
+
+    intro.style.opacity = "0";
+
+    setTimeout(() => {
+        intro.style.display = "none";
+    }, 1000);
 }
 
-function createHearts(count) {
-  const emojis = ['💗','💕','💖','♡','🌸','✨'];
+/* Birthday cake surprise */
+function cakeSurprise() {
+    const message = document.getElementById("cakeMessage");
 
-  for (let i = 0; i < count; i++) {
-    const heart = document.createElement('div');
+    message.innerHTML =
+        "🎉 Yay! Happy birthday, my princess! 🎂💗 " +
+        "May every single wish of yours come true! ✨";
 
-    heart.className = 'heart';
-    heart.textContent =
-      emojis[Math.floor(Math.random() * emojis.length)];
+    createBurst();
+}
 
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.fontSize = (14 + Math.random() * 22) + 'px';
-    heart.style.animationDuration = (5 + Math.random() * 6) + 's';
+/* Final romantic message */
+function showFinalMessage() {
+    const message = document.getElementById("finalMessage");
+
+    message.style.display = "block";
+
+    message.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+/* Floating hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "floating-heart";
+    heart.innerHTML = ["♥", "♡", "💕", "💗"][
+        Math.floor(Math.random() * 4)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
 
     document.body.appendChild(heart);
 
-    setTimeout(() => heart.remove(), 12000);
-  }
+    setTimeout(() => {
+        heart.remove();
+    }, 9000);
 }
 
-function blowCandles() {
-  document.getElementById('cakeMessage').style.display = 'block';
-  createHearts(35);
-}
+setInterval(createHeart, 700);
 
-function showFinal() {
-  document.getElementById('finalMessage').style.display = 'block';
-  createHearts(40);
-}
+/* Heart burst for birthday cake */
+function createBurst() {
+    for (let i = 0; i < 15; i++) {
+        const heart = document.createElement("div");
 
-// Floating hearts
-setInterval(() => createHearts(2), 3500);
+        heart.innerHTML = "💗";
+        heart.style.position = "fixed";
+        heart.style.left = (40 + Math.random() * 20) + "vw";
+        heart.style.top = (40 + Math.random() * 20) + "vh";
+        heart.style.fontSize = "25px";
+        heart.style.pointerEvents = "none";
+        heart.style.zIndex = "2000";
+        heart.style.transition = "all 1.5s ease";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.style.transform =
+                `translate(${Math.random() * 400 - 200}px, ${Math.random() * 400 - 200}px)`;
+            heart.style.opacity = "0";
+        }, 50);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 1700);
+    }
+}
 </script>
 
 </body>
 </html>
+```
